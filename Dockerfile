@@ -10,6 +10,7 @@ RUN useradd -g $GROUP_ID -u $USER_ID -m user
 USER user
 
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+COPY .zshrc /home/user/.zshrc
 
 WORKDIR /workspace
 ENTRYPOINT zsh
